@@ -12,7 +12,7 @@ public class EventController {
     @Autowired
     private KaftkaAvroProducer producer;
 
-    @PostMapping("events")
+    @PostMapping("/events")
     public String sendMessage(@RequestBody Employee employee){
         producer.send(employee);
         return "message published!!";
